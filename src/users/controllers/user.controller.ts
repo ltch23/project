@@ -32,18 +32,6 @@ export class UserController {
       async getByField(@Param('rut') rut, @Param('data') data: string): Promise<UserModel[]> {
       return await this.service.getbyField(data, rut);
     }
-    // @Get('rutChilen=:param')
-    // async getByRutChilen(@Param('param') rutChilen): Promise<UserModel[]> {
-    //   return await this.service.getByRutChilen(rutChilen);
-    // }
-    // @Get('nombre=:param')
-    // async getByName(@Param('param') nombre): Promise<UserModel[]> {
-    //   return await this.service.getbyRut(nombre);
-    // }
-    // @Get('apellido=:param')
-    // async getByApellido(@Param('param') apellido): Promise<UserModel[]> {
-    //   return await this.service.getbyRut(apellido);
-    // }
 
 
 

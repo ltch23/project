@@ -36,25 +36,25 @@ export class UserService {
       
       if (data =="rut")
         return await this.model.find({"rut":rut});
-      // else if (data =="rutChilen")
-      //   return await this.model.find({"rut":rut});
-      // else if (data =="nombre")
-      //   return await this.model.find({"nombre":rut});
-      // else if (data =="apellido")
-      //   return await this.model.find({"apellido":rut});
-      // else if (data =="telefono")
-      //   return await this.model.find({"telefono":rut});
-      // else if (data =="sexo")
-      //   return await this.model.find({"sexo":rut});
-      // else if (data =="email")
-      //   return await this.model.find({"email":rut});
-      // else if (data =="direcciones")
-      //   return await this.model.find({"direcciones":rut});
-      // else if (data =="nDirecciones")
-      //   return await this.model.find({"nDirecciones":rut});
+      else if (data =="rutChilen")
+        return await this.model.find({"rut":rut});
+      else if (data =="nombre")
+        return await this.model.find({"nombre":rut});
+      else if (data =="apellido")
+        return await this.model.find({"apellido":rut});
+      else if (data =="telefono")
+        return await this.model.find({"telefono":rut});
+      else if (data =="sexo")
+        return await this.model.find({"sexo":rut});
+      else if (data =="email")
+        return await this.model.find({"email":rut});
+      else if (data =="direcciones")
+        return await this.model.find({"direcciones":rut});
+      else if (data =="nDirecciones")
+        return await this.model.find({"nDirecciones":rut});
       // else
       // Intente que sea dinamica, pero por sintaxis y semantica no alcance
       
-    }  
+    }
 
 }
