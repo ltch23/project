@@ -9,11 +9,15 @@ export class UserController {
   
     @Post()
     async create(@Body() model: UserModel) {
+      console.log(model.nombre)
+      console.log(model.email)
+      
       return await this.service.create(model);
     }
   
     @Get()
     async get(): Promise<UserModel[]> {
+       
       return await this.service.get();
     }
 

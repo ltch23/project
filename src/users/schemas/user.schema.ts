@@ -1,14 +1,21 @@
 import * as mongoose from 'mongoose';
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
+const joigoose = require('joigoose')(mongoose)
 
-export const UserSchema = new mongoose.Schema({
-  rut: { type: String()},
-  rutChilen: { type: String},
-  nombre: { type: Joi.string().min(4)},
-  apellido: { type: String},
-  telefono: { type: String},
-  sexo: { type: String},
-  email: { type: Joi.string().email().allow('').default('xyz')},
-  dirrecciones: { type: String},
-  nDirrecciones: { type: Number},
+
+const joiSchema =  Joi.object().keys({
+  rut: Joi.string().required(),
+  rutChilen: Joi.string(),
+  nombre: Joi.string(),
+  apellido: Joi.string(),
+  telefono: Joi.string(),
+  sexo: Joi.string(),
+  email: Joi.string().email().allow(''),
+  dirrecciones: Joi.string(),
+  nDirrecciones: Joi.string(),
 });
+
+export const UserSchema = new mongoose.Schema(joigoose.convert(joiSchema))
+
+mongoose.model('Model', UserSchema)
+
