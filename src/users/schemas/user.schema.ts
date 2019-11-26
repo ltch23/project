@@ -4,15 +4,15 @@ const joigoose = require('joigoose')(mongoose)
 
 
 const joiSchema =  Joi.object().keys({
-  rut: Joi.string().required(),
-  rutChilen: Joi.string(),
-  nombre: Joi.string(),
-  apellido: Joi.string(),
-  telefono: Joi.string(),
-  sexo: Joi.string(),
+  rut: Joi.string().regex(/^[0-9]+$/).min(8) ,
+  rutChilen: Joi.string().regex(/^[0-9]+$/).min(8),
+  nombre: Joi.string().regex(/^[a-zA-Z]+$/),
+  apellido: Joi.string().regex(/^[a-zA-Z]+$/),
+  telefono: Joi.string().regex(/^[0-9]+$/).allow(''),
+  sexo: Joi.string().regex(/^[a-zA-Z]+$/),
   email: Joi.string().email().allow(''),
-  dirrecciones: Joi.string(),
-  nDirrecciones: Joi.string(),
+  dirrecciones: Joi.array().items(Joi.string()),
+  nDirrecciones: Joi.number(),
 });
 
 export const UserSchema = new mongoose.Schema(joigoose.convert(joiSchema))

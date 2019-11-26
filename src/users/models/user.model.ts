@@ -9,7 +9,6 @@ export interface UserModel extends mongoose.Document{
     telefono: string;
     sexo: string;
     email: string;
-    dirrecciones: string;
     ndirrecciones: number;
-    
+    dirrecciones: string[];   
 }
